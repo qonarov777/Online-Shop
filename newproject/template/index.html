@@ -1,4 +1,4 @@
-{% extends 'bace.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -43,7 +43,7 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{% url 'IndexView' %}" class="nav-item nav-link active">Home</a>
-                            <a href="{% url 'ShopView' %}" class="nav-item nav-link">Shop</a>
+                            <a href="{% url 'SopView' %}" class="nav-item nav-link">Shopp</a>
                             <a href="{% url 'DetailView' %}" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -62,13 +62,13 @@
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                        {% for shop in Shopnow %}
-                            <div class="carousel-item active" style="height: 410px;">
-                                        <img class="img-fluid" src="{{ shop.image.url }}" alt="Image">
+                        {% for shops in Shopnow %}
+                            <div class="carousel-item {% if forloop.first %} active {% endif %} " style="height: 410px;">
+                                        <img class="img-fluid" src="{{ shops.image.url }}" alt="Image">
                                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                     <div class="p-3" style="max-width: 700px;">
-                                        <h4 class="text-light text-uppercase font-weight-medium mb-3">{{ shop.title }}</h4>
-                                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">{{ shop.categories }}</h3>
+                                        <h4 class="text-light text-uppercase font-weight-medium mb-3">{{ shops.title }}</h4>
+                                        <h3 class="display-4 text-white font-weight-semi-bold mb-4">{{ shops.categories }}</h3>
                                         <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
                                     </div>
                                 </div>
