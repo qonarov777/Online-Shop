@@ -1,7 +1,14 @@
 from django.shortcuts import render
+from .models import shopnow
 
 def IndexView(request):
-    return render(request, 'index.html')
+    
+    Shopnow = shopnow.objects.all()
+    context={
+                'Shopnow':Shopnow
+                }
+    
+    return render(request, 'index.html', context=context)
 
 def ShopView(request):
     return render(request, 'shop.html')

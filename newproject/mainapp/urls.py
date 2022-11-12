@@ -7,7 +7,7 @@ from .views import CheckoutView
 from .views import CartView
 
 urlpatterns = [
-    path('index/', IndexView),
+    path('', IndexView),
     path('shop/', ShopView),
     path('detail/', DetailView),
     path('contact/', ContactView),
