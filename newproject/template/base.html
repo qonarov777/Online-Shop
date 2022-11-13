@@ -66,9 +66,15 @@
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
-                <form class="form-inline my-2 my-lg-0" action="{% url 'IndexView' %}">
-                    <input class="form-control mr-sm-2" type="search"   placeholder="Search" aria-label="Search" name="search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <form action="">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for products">
+                        <div class="input-group-append">
+                            <span class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="col-lg-3 col-6 text-right">
@@ -91,8 +97,6 @@
 
 
     {% endblock content %}
-
-    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
