@@ -16,3 +16,27 @@ class shopnow(models.Model):
         verbose_name='Basic view'
         verbose_name_plural='Basic views'
 
+class Featured(models.Model):
+    title=models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.title 
+    
+    class Meta:
+        verbose_name='Featured'
+        verbose_name_plural='Featured'
+    
+    
+class Categories(models.Model):
+    title=models.CharField( max_length=50)
+    image= models.ImageField(upload_to="media/Categories/")
+    number = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name='Categori'
+        verbose_name_plural='Categories'
+        
+    
