@@ -55,7 +55,7 @@ class Products(models.Model):
         verbose_name_plural='Products'
     
 class Arrived(models.Model):
-    image= models.ImageField( upload_to=None)
+    image= models.ImageField( upload_to='media/Arrived/')
     title=models.CharField( max_length=50)
     cost= models.IntegerField()
     cost_delate= models.IntegerField()
@@ -92,3 +92,15 @@ class Link(models.Model):
         verbose_name_plural='links'   
     
     
+class Shopproduct(models.Model):
+    image= models.ImageField( upload_to='media/Shopproduct/')
+    title=models.CharField( max_length=50)
+    cost= models.IntegerField()
+    cost_delate= models.IntegerField()
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name='Shop Product'
+        verbose_name_plural='Shop Products'
