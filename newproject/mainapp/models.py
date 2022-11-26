@@ -104,3 +104,15 @@ class Shopproduct(models.Model):
     class Meta:
         verbose_name='Shop Product'
         verbose_name_plural='Shop Products'
+        
+class Shopdetails(models.Model):
+    image= models.ImageField(upload_to="media/Shop detail/")
+    size= models.IntegerField()
+    color=models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.color
+    
+    class Meta:
+        verbose_name='Shop Detail'
+        verbose_name_plural='Shop Details'

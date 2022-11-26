@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import shopnow,  Categorie, Collection, Products, Arrived, Vendorr, Link, Shopproduct
+from .models import shopnow,  Categorie, Collection, Products, Arrived, Vendorr, Link, Shopproduct,Shopdetails
 
 
 def IndexView(request):
@@ -27,9 +27,11 @@ def IndexView(request):
 
 def ShopView(request):
     products=Shopproduct.objects.all()
+    shopdetail=Shopdetails.objects.all()
     
     context={
-        'products':products,
+                'products':products,
+                'shopdetail':shopdetail,
                 }
     return render(request, 'shop.html', context=context)
 
